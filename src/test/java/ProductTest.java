@@ -11,13 +11,20 @@ public class ProductTest {
     void testUnProductoTieneUnNombreYunPrecio(){
         Product producto = new Product();
         assertEquals("manzana", producto.getName());
-        assertEquals(2.3, producto.getPrice());
+        assertEquals(20, producto.getPrice());
     }
 
     @Test
     @DisplayName("El precio de un producto sin descuento es el precio original del producto")
     void testElPrecioDeUnProductoSinDescuentoEsElPrecioOriginalDelProducto(){
         Product product = new Product();
-        assertEquals(2.3, product.getPriceWithoutDiscount());
+        assertEquals(20, product.getPriceWithoutDiscount());
+    }
+
+    @Test
+    @DisplayName("El precio de un producto con descuento es el precio original con el descuento del % asignado!")
+    void testElPrecioDeUnProductoConDescuentoEsElPrecioOriginalConElDescuentoAsignado(){
+        Product product = new Product();
+        assertEquals(2.0, product.getPriceWithDiscount());
     }
 }
