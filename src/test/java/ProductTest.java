@@ -13,4 +13,11 @@ public class ProductTest {
         assertEquals("manzana", producto.getName());
         assertEquals(2.3, producto.getPrice());
     }
+
+    @Test
+    @DisplayName("El precio de un producto sin descuento es el precio original del producto")
+    void testElPrecioDeUnProductoSinDescuentoEsElPrecioOriginalDelProducto(){
+        Product product = new Product();
+        assertEquals(2.3, product.getPriceWithoutDiscount());
+    }
 }

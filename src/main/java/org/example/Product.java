@@ -10,4 +10,8 @@ public class Product {
     public double getPrice() {
         return 2.3;
     }
+
+    public double getPriceWithoutDiscount() {
+        return getPrice();
+    }
 }

@@ -1,0 +1,44 @@
+@startuml
+
+class Product {
+    - name : String
+    - price : double
+    + getPrice() : double
+    + getName() : String
+}
+
+class FreeProduct {
+    + getPrice() : 0.0
+}
+
+class FoodProduct {
+    - discount : double
+    + setDiscount()
+}
+
+class BookProduct {
+    - author : String
+    - description : String
+    - discount : double
+    + setDiscount()
+    + getPrice()
+}
+
+class Cart {
+    - products : List<Product>
+    + addProduct(product : Product) : void
+    + removeProductByName(name : String) : void
+    + getProducts() : List<Product>
+    + getProductCount() : int
+    + getTotalCost() : double
+}
+
+' Relación de herencia
+FreeProduct --|> Product
+FoodProduct --|> Product
+BookProduct --|> Product
+
+' Relación de agregación
+Cart o-- "1..*" Product
+
+@enduml
