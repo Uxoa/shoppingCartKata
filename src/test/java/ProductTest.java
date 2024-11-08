@@ -1,4 +1,5 @@
 import org.example.Product;
+import org.example.Discount;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

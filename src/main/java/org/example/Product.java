@@ -4,7 +4,7 @@ import org.example.Discount;
 
 public class Product {
 
-    Discount discount = new Discount(0.10);
+
 
     public String getName() {
         return "manzana";
@@ -19,7 +19,7 @@ public class Product {
     }
 
     public double getPriceWithDiscount() {
-
+         Discount discount = new Discount(0.10);
          return getPrice() * discount.hasDiscount();
     }
 }
