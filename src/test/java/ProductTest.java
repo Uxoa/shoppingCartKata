@@ -1,5 +1,5 @@
+import org.example.Cart;
 import org.example.Product;
-import org.example.Discount;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -27,5 +27,15 @@ public class ProductTest {
     void testElPrecioDeUnProductoConDescuentoEsElPrecioOriginalConElDescuentoAsignado(){
         Product product = new Product();
         assertEquals(2.0, product.getPriceWithDiscount());
+    }
+    
+    @Test
+    @DisplayName("Añadir 1 producto al carrito")
+    void testAnyadirProductosAlCarrito(){
+        Product product = new Product();
+        Cart cart = new Cart();
+        cart.addProduct(product);
+        assertEquals(1, cart.getCartProducts().size());
+        assertEquals(product, cart.getCartProducts().getFirst());
     }
 }
